@@ -1,0 +1,26 @@
+[
+    {
+        "key":  "OPTICORE-VIP-2026",
+        "isUsed":  false,
+        "type":  "Sınırsız VIP PRO",
+        "createdAt":  "2026-08-22"
+    },
+    {
+        "key":  "6CLOSY-MASTER-KEY",
+        "isUsed":  false,
+        "type":  "Kurucu Master",
+        "createdAt":  "2026-08-22"
+    },
+    {
+        "key":  "ADMIN-ROOT-2026",
+        "isUsed":  false,
+        "type":  "Root Yönetici",
+        "createdAt":  "2026-08-22"
+    },
+    {
+        "key":  "VIP-ESPORT-TURBO",
+        "isUsed":  false,
+        "type":  "Espor Turbo VIP",
+        "createdAt":  "2026-08-22"
+    }
+]

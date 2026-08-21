@@ -3,22 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OptiCore Studio PRO v1.0.8 - Resmi Bilgilendirme & Güncelleme Portalı</title>
+  <title>OptiCore Studio PRO - Windows 11 & Esports Performans Portalı</title>
   <meta name="description" content="5'li Ultra Esport FPS Motoru, CPU Core Unparking, GPU HAGS ve VIP Kulübü. +45 FPS, 0ms Gecikme!">
   
+  <!-- 🌟 BROWSER TAB FAVICON -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2300f2fe'/%3E%3Cstop offset='100%25' stop-color='%234facfe'/%3E%3C/linearGradient%3E%3Cfilter id='glow'%3E%3CfeGaussianBlur stdDeviation='3' result='coloredBlur'/%3E%3CfeMerge%3E%3CfeMergeNode in='coloredBlur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Cpolygon points='50,5 90,27 90,73 50,95 10,73 10,27' fill='%23080c14' stroke='url(%23g)' stroke-width='6' filter='url(%23glow)'/%3E%3Ccircle cx='50' cy='50' r='20' fill='none' stroke='%2300f2fe' stroke-width='4' filter='url(%23glow)'/%3E%3Cpolygon points='50,22 62,45 52,45 56,75 38,48 48,48' fill='%23ffffff' filter='url(%23glow)'/%3E%3C/svg%3E">
   <link rel="apple-touch-icon" href="https://cdn.discordapp.com/app-icons/1538964091232719000/icon.png">
   
-  <meta property="og:title" content="OptiCore Studio PRO v1.0.8 - Canlı Güncelleme Portalı">
+  <meta property="og:title" content="OptiCore Studio PRO - Windows 11 & Esports Performans Portalı">
   <meta property="og:description" content="5'li Ultra Esport FPS Motoru, CPU Core Unparking ve VIP Lisans Kulübü. +45 FPS, 0ms Gecikme!">
   <meta property="og:image" content="https://cdn.discordapp.com/app-icons/1538964091232719000/icon.png">
   <meta property="og:url" content="https://opticore.closydev.site/">
   <meta name="theme-color" content="#00f2fe">
 
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <script>
@@ -47,8 +51,15 @@
   </script>
 
   <style>
-    html { scroll-padding-top: 110px; }
-    body { background-color: #030508; color: #f1f5f9; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+    html {
+      scroll-padding-top: 85px;
+    }
+    body {
+      background-color: #030508;
+      color: #f1f5f9;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
     .bg-cyber-mesh {
       background-image: 
         radial-gradient(at 0% 0%, rgba(0, 242, 254, 0.12) 0px, transparent 50%),
@@ -57,32 +68,51 @@
         linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
       background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
     }
-    .glow-cyan { box-shadow: 0 0 50px -10px rgba(0, 242, 254, 0.45); }
-    .glow-amber { box-shadow: 0 0 50px -10px rgba(251, 191, 36, 0.35); }
+    .glow-cyan {
+      box-shadow: 0 0 50px -10px rgba(0, 242, 254, 0.45);
+    }
+    .glow-amber {
+      box-shadow: 0 0 50px -10px rgba(251, 191, 36, 0.35);
+    }
+    .glow-purple {
+      box-shadow: 0 0 50px -10px rgba(157, 78, 221, 0.4);
+    }
+    .glow-emerald {
+      box-shadow: 0 0 40px -10px rgba(16, 185, 129, 0.4);
+    }
     .glass-card {
-      background: rgba(9, 13, 22, 0.85);
+      background: rgba(9, 13, 22, 0.82);
       backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
-    .glass-card:hover { border-color: rgba(0, 242, 254, 0.4); }
-    @keyframes floatSlow { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-10px) rotate(1deg); } }
-    .animate-float { animation: floatSlow 6s ease-in-out infinite; }
+    .glass-card:hover {
+      border-color: rgba(0, 242, 254, 0.4);
+    }
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(1deg); }
+    }
+    .animate-float {
+      animation: floatSlow 6s ease-in-out infinite;
+    }
+    @keyframes pulseRing {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.05); opacity: 0.3; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+    .animate-ring {
+      animation: pulseRing 3.5s ease-in-out infinite;
+    }
   </style>
 </head>
 <body class="bg-cyber-mesh antialiased selection:bg-cyan-400 selection:text-black">
 
-  <!-- 📢 EN ÜST CANLI DUYURU BANDI -->
-  <div class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 text-black py-2 px-4 text-center text-xs font-black tracking-wide flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/25">
-    <span class="px-2 py-0.5 rounded-full bg-black text-cyan-300 text-[10px] font-mono animate-pulse">🔥 YENİ GÜNCELLEME</span>
-    <span>OptiCore Studio PRO v1.0.8 Yayınlandı! Discord VIP Rol Otomasyonu & 0ms Espor Kilidi Devrede.</span>
-    <a href="#updates" class="underline text-black font-extrabold hover:text-white transition-colors ml-2 flex items-center gap-0.5">
-      <span>Neler Değişti?</span> &rarr;
-    </a>
-  </div>
-
   <!-- 🌟 NAVBAR -->
-  <nav class="fixed top-9 left-0 right-0 z-40 bg-[#030508]/85 backdrop-blur-2xl border-b border-white/10 px-6 py-3 transition-all">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#030508]/85 backdrop-blur-2xl border-b border-white/10 px-6 py-3.5 transition-all">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- Logo -->
       <a href="#" class="flex items-center gap-3.5 group">
         <div class="relative w-10 h-10 rounded-2xl p-0.5 bg-gradient-to-tr from-cyan-400 via-sky-400 to-indigo-600 shadow-lg shadow-cyan-500/40 group-hover:scale-105 transition-transform flex items-center justify-center">
           <svg class="w-7 h-7" viewBox="0 0 100 100">
@@ -96,10 +126,11 @@
             <span class="text-base font-black text-white tracking-tight">OptiCore</span>
             <span class="text-[9px] font-black font-mono text-cyan-300 bg-cyan-500/20 px-1.5 py-0.5 rounded border border-cyan-400/30">STUDIO PRO</span>
           </div>
-          <span class="text-[9.5px] text-slate-400 font-mono">v1.0.8 Official Hub</span>
+          <span class="text-[9.5px] text-slate-400 font-mono">v1.0.7 Official Hub</span>
         </div>
       </a>
 
+      <!-- Menü Linkleri (Tüm Kategoriler Aktif) -->
       <div class="hidden md:flex items-center gap-7 text-xs font-medium text-slate-300">
         <a href="#fps-engine" class="hover:text-cyan-400 transition-colors flex items-center gap-1 font-semibold">
           <i data-lucide="zap" class="w-3.5 h-3.5 text-cyan-400"></i> 5'li FPS Motoru
@@ -110,30 +141,38 @@
         <a href="#vip" class="hover:text-amber-400 transition-colors flex items-center gap-1.5 font-bold text-amber-300">
           <i data-lucide="crown" class="w-3.5 h-3.5 text-amber-400 fill-current"></i> VIP Kulübü
         </a>
+        <a href="#demo" class="hover:text-cyan-400 transition-colors flex items-center gap-1 font-semibold">
+          <i data-lucide="play" class="w-3 h-3 text-cyan-400 fill-current"></i> Canlı Simülatör
+        </a>
         <a href="#updates" class="hover:text-cyan-400 transition-colors flex items-center gap-1 font-semibold">
-          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-cyan-400"></i> Sürüm Notları (v1.0.8)
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-cyan-400"></i> Sürüm Notları
         </a>
       </div>
 
+      <!-- Sağ Aksiyonlar -->
       <div class="flex items-center gap-3">
         <a href="https://github.com/Liqer01/OptiCore-" target="_blank" class="hidden sm:flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-slate-300 hover:text-white transition-all">
           <i data-lucide="github" class="w-4 h-4"></i>
           <span>GitHub</span>
         </a>
-        <a href="https://github.com/Liqer01/OptiCore-/releases/latest/download/OptiCore.Studio.Setup.1.0.8.exe" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 hover:from-cyan-500 hover:to-indigo-700 text-black font-black text-xs shadow-lg shadow-cyan-500/30 active:scale-95 transition-all">
+        <a href="https://github.com/Liqer01/OptiCore-/releases/latest/download/OptiCore.Studio.Setup.1.0.7.exe" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 hover:from-cyan-500 hover:to-indigo-700 text-black font-black text-xs shadow-lg shadow-cyan-500/30 active:scale-95 transition-all">
           <i data-lucide="download" class="w-4 h-4"></i>
-          <span>v1.0.8 İndir (.exe)</span>
+          <span>v1.0.7 İndir (.exe)</span>
         </a>
       </div>
+
     </div>
   </nav>
 
   <!-- 🚀 HERO SECTION -->
-  <section class="pt-44 pb-16 px-6 relative z-10">
+  <section class="pt-36 pb-16 px-6 relative z-10">
     <div class="max-w-5xl mx-auto text-center space-y-7">
+      
+      <!-- 🌟 RESMİ OPTICORE LOGOSU -->
       <div class="flex justify-center">
         <div class="relative group animate-float">
-          <div class="absolute -inset-4 bg-gradient-to-r from-cyan-500 via-sky-400 to-indigo-600 rounded-full blur-2xl opacity-70 group-hover:opacity-100 transition duration-1000"></div>
+          <div class="absolute -inset-4 bg-gradient-to-r from-cyan-500 via-sky-400 to-indigo-600 rounded-full blur-2xl opacity-70 group-hover:opacity-100 transition duration-1000 animate-ring"></div>
+          
           <div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-[28px] p-1 bg-gradient-to-tr from-cyan-400 via-blue-500 to-indigo-600 border-2 border-cyan-300/60 shadow-2xl flex items-center justify-center glow-cyan bg-[#070b14]">
             <svg class="w-20 h-20 sm:w-24 sm:h-24 drop-shadow-[0_0_15px_rgba(0,242,254,0.8)]" viewBox="0 0 100 100">
               <polygon points="50,5 90,27 90,73 50,95 10,73 10,27" fill="#080e1a" stroke="#00f2fe" stroke-width="5"/>
@@ -151,12 +190,14 @@
         </div>
       </div>
 
+      <!-- Durum Rozeti -->
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-400/10 border border-cyan-400/30 text-cyan-300 text-xs font-semibold backdrop-blur-xl">
         <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-        <span>OptiCore Studio Pro v1.0.8 Stable Canlıda!</span>
+        <span>OptiCore Studio Pro v1.0.7 Stable Yayınlandı!</span>
         <i data-lucide="sparkles" class="w-3.5 h-3.5 text-cyan-400"></i>
       </div>
 
+      <!-- Ana Başlık -->
       <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.08]">
         Windows 11 & Espor Performansının <br class="hidden sm:inline">
         <span class="bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400 bg-clip-text text-transparent">
@@ -164,21 +205,447 @@
         </span>
       </h1>
 
+      <!-- Alt Açıklama -->
       <p class="text-slate-300 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
-        Oyunlarda anlık donmalara (stutter), FPS dalgalanmalarına ve input lag'a veda edin. <strong>CPU Core Unparking</strong>, <strong>GPU HAGS Kilidi</strong> ve <strong>Discord VIP Otomasyonu</strong> ile profesyonel kare hızı.
+        Oyunlarda anlık donmalara (stutter), FPS dalgalanmalarına ve input lag'a veda edin. <strong>CPU Core Unparking</strong>, <strong>GPU HAGS Kilidi</strong> ve <strong>VIP Bulut Senkronizasyonu</strong> ile profesyonel kare hızı.
       </p>
 
+      <!-- İndirme & Aksiyon Butonları -->
       <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
-        <a href="https://github.com/Liqer01/OptiCore-/releases/latest/download/OptiCore.Studio.Setup.1.0.8.exe" class="px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 hover:from-cyan-500 hover:to-indigo-700 text-black font-black text-sm sm:text-base shadow-2xl shadow-cyan-500/35 flex items-center gap-3 active:scale-95 transition-all hover:scale-105">
+        <a href="https://github.com/Liqer01/OptiCore-/releases/latest/download/OptiCore.Studio.Setup.1.0.7.exe" class="px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 hover:from-cyan-500 hover:to-indigo-700 text-black font-black text-sm sm:text-base shadow-2xl shadow-cyan-500/35 flex items-center gap-3 active:scale-95 transition-all hover:scale-105">
           <i data-lucide="download" class="w-5 h-5"></i>
-          <span>OptiCore v1.0.8 İndir</span>
+          <span>OptiCore v1.0.7 İndir</span>
           <span class="text-[10.5px] px-2.5 py-0.5 rounded-full bg-black/20 text-black font-mono">Windows 10/11</span>
         </a>
 
-        <a href="#updates" class="px-6 py-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold text-sm flex items-center gap-2 transition-all">
-          <i data-lucide="sparkles" class="w-4 h-4 text-cyan-400"></i>
-          <span>v1.0.8 Sürüm Notları</span>
+        <a href="#fps-engine" class="px-6 py-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold text-sm flex items-center gap-2 transition-all">
+          <i data-lucide="zap" class="w-4 h-4 text-cyan-400"></i>
+          <span>5'li FPS Motorunu Keşfet</span>
         </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 🔥 1. KATEGORİ: 5'Lİ FPS MOTORU DETAYI (#fps-engine) -->
+  <section id="fps-engine" class="py-20 px-6 max-w-6xl mx-auto relative z-10">
+    <div class="text-center space-y-3 mb-14">
+      <div class="inline-flex items-center gap-2 text-xs font-mono font-bold text-cyan-400 bg-cyan-400/10 px-3.5 py-1 rounded-full border border-cyan-400/20">
+        <i data-lucide="zap" class="w-3.5 h-3.5"></i> ÇEKİRDEK MÜHENDİSLİĞİ
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Klasik Programlar Değil, <span class="text-cyan-400">5'li Donanım Kilidi</span>
+      </h2>
+      <p class="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto">
+        Diğer sözde hızlandırıcılar gibi sahte animasyon göstermez; Windows'un espor oyuncularını kısıtlayan tüm zincirlerini kırar.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <div class="glass-card p-6 rounded-3xl space-y-3 transition-all hover:scale-[1.02] glow-cyan">
+        <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">
+          <i data-lucide="cpu" class="w-6 h-6"></i>
+        </div>
+        <h3 class="text-base font-bold text-white">1. CPU Core Unparking</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Windows'un enerji tasarrufu için işlemci çekirdeklerini uyutmasını engeller. Çatışma anındaki anlık FPS droplarını (%0.1 Low) sıfırlar.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 rounded-3xl space-y-3 transition-all hover:scale-[1.02]">
+        <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center font-bold">
+          <i data-lucide="gauge" class="w-6 h-6"></i>
+        </div>
+        <h3 class="text-base font-bold text-white">2. GPU HAGS & DirectX 12</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Donanım Hızlandırmalı GPU Zamanlamasını devreye sokar. Ekran kartı VRAM gecikmesini kaldırarak maksimum kare hızı üretir.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 rounded-3xl space-y-3 transition-all hover:scale-[1.02]">
+        <div class="w-12 h-12 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center font-bold">
+          <i data-lucide="ban" class="w-6 h-6"></i>
+        </div>
+        <h3 class="text-base font-bold text-white">3. Xbox GameDVR Kökten Silme</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Windows 11'in arka planda gizlice video kaydettiği için oyunlarda %20 FPS çalan GameDVR modülünü kökten kapatır.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 rounded-3xl space-y-3 transition-all hover:scale-[1.02]">
+        <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold">
+          <i data-lucide="shield-check" class="w-6 h-6"></i>
+        </div>
+        <h3 class="text-base font-bold text-white">4. Akıllı Oyun Whitelist Kalkanı</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          RAM temizleyici açık olan CS2, Valorant, RDR2 veya GTA 5 gibi oyunların belleğine asla dokunmaz, doku yırtılmasını önler.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 rounded-3xl space-y-3 transition-all hover:scale-[1.02]">
+        <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
+          <i data-lucide="sliders-horizontal" class="w-6 h-6"></i>
+        </div>
+        <h3 class="text-base font-bold text-white">5. Arka Plan Süreç Kısıcı</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Oyundayken Discord, Chrome, Spotify gibi uygulamaların CPU kullanımını %1'e düşürür, tüm işlemci gücünü oyuna odaklar.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 rounded-3xl space-y-3 transition-all hover:scale-[1.02]">
+        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-bold">
+          <i data-lucide="radio" class="w-6 h-6"></i>
+        </div>
+        <h3 class="text-base font-bold text-white">6. Monitör Canlı HUD Overlay</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Monitörünüzün sağ üst köşesine yapışan şeffaf, hafif ve tek tıkla RAM boşaltabilen şık mini gösterge penceresi.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ⚔️ 2. KATEGORİ: OYUN TESTLERİ (#games) -->
+  <section id="games" class="py-20 px-6 max-w-6xl mx-auto relative z-10">
+    <div class="text-center space-y-3 mb-12">
+      <div class="inline-flex items-center gap-2 text-xs font-mono font-bold text-purple-400 bg-purple-400/10 px-3.5 py-1 rounded-full border border-purple-400/20">
+        <i data-lucide="gamepad-2" class="w-3.5 h-3.5"></i> CANLI ESPOR BENCHMARK TESTLERİ
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Popüler Oyunlarda <span class="text-cyan-400">+20 ile +45 FPS</span> Net Kazanç
+      </h2>
+      <p class="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto">
+        Tüm testler Windows 11 64-bit üzerinde, rekabetçi espor ayarlarında ve 1080p çözünürlükte gerçekleştirilmiştir.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- CS2 -->
+      <div class="glass-card p-6 rounded-3xl space-y-4 glow-cyan">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold">
+              <i data-lucide="crosshair" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white">Counter-Strike 2</h3>
+              <p class="text-xs text-slate-400 font-mono">Dust II • 1080p Low Competitive</p>
+            </div>
+          </div>
+          <span class="text-xs font-mono font-bold px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-xl border border-emerald-500/30">
+            +42 FPS KAZANÇ
+          </span>
+        </div>
+
+        <div class="space-y-2 text-xs font-mono">
+          <div>
+            <div class="flex justify-between text-slate-400 mb-1">
+              <span>OptiCore İle:</span>
+              <strong class="text-emerald-400 font-bold">284 FPS (0.1% Low 210 FPS)</strong>
+            </div>
+            <div class="w-full bg-white/5 h-3 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-cyan-400 to-emerald-400 h-full w-[95%] rounded-full"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-slate-500 mb-1">
+              <span>Standart Windows 11:</span>
+              <span>242 FPS (0.1% Low 140 FPS - Stutter)</span>
+            </div>
+            <div class="w-full bg-white/5 h-2 rounded-full overflow-hidden">
+              <div class="bg-slate-600 h-full w-[78%] rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Valorant -->
+      <div class="glass-card p-6 rounded-3xl space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center font-bold">
+              <i data-lucide="shield-alert" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white">Valorant</h3>
+              <p class="text-xs text-slate-400 font-mono">Ascent • Riot Vanguard Uyumlu</p>
+            </div>
+          </div>
+          <span class="text-xs font-mono font-bold px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-xl border border-emerald-500/30">
+            +38 FPS KAZANÇ
+          </span>
+        </div>
+
+        <div class="space-y-2 text-xs font-mono">
+          <div>
+            <div class="flex justify-between text-slate-400 mb-1">
+              <span>OptiCore İle:</span>
+              <strong class="text-emerald-400 font-bold">340 FPS (Kilitli 0ms Gecikme)</strong>
+            </div>
+            <div class="w-full bg-white/5 h-3 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-rose-500 to-indigo-500 h-full w-[98%] rounded-full"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-slate-500 mb-1">
+              <span>Standart Windows 11:</span>
+              <span>302 FPS (Giriş Gecikmesi 4.2ms)</span>
+            </div>
+            <div class="w-full bg-white/5 h-2 rounded-full overflow-hidden">
+              <div class="bg-slate-600 h-full w-[82%] rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GTA V / FiveM -->
+      <div class="glass-card p-6 rounded-3xl space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold">
+              <i data-lucide="car" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white">GTA V & FiveM Roleplay</h3>
+              <p class="text-xs text-slate-400 font-mono">Ağır Modlu Sunucular • 0 Doku Kaybı</p>
+            </div>
+          </div>
+          <span class="text-xs font-mono font-bold px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-xl border border-emerald-500/30">
+            +35 FPS KAZANÇ
+          </span>
+        </div>
+
+        <div class="space-y-2 text-xs font-mono">
+          <div>
+            <div class="flex justify-between text-slate-400 mb-1">
+              <span>OptiCore İle:</span>
+              <strong class="text-emerald-400 font-bold">118 FPS (Sıfır Doku Yırtılması)</strong>
+            </div>
+            <div class="w-full bg-white/5 h-3 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-purple-500 to-cyan-400 h-full w-[90%] rounded-full"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-slate-500 mb-1">
+              <span>Standart Windows 11:</span>
+              <span>83 FPS (Texture Bug & Drop)</span>
+            </div>
+            <div class="w-full bg-white/5 h-2 rounded-full overflow-hidden">
+              <div class="bg-slate-600 h-full w-[65%] rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cyberpunk 2077 -->
+      <div class="glass-card p-6 rounded-3xl space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center font-bold">
+              <i data-lucide="sparkles" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white">Cyberpunk 2077: Phantom Liberty</h3>
+              <p class="text-xs text-slate-400 font-mono">DirectX 12 • GPU HAGS Aktif</p>
+            </div>
+          </div>
+          <span class="text-xs font-mono font-bold px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-xl border border-emerald-500/30">
+            +26 FPS KAZANÇ
+          </span>
+        </div>
+
+        <div class="space-y-2 text-xs font-mono">
+          <div>
+            <div class="flex justify-between text-slate-400 mb-1">
+              <span>OptiCore İle:</span>
+              <strong class="text-emerald-400 font-bold">92 FPS (Düşük VRAM Gecikmesi)</strong>
+            </div>
+            <div class="w-full bg-white/5 h-3 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-yellow-400 to-amber-500 h-full w-[88%] rounded-full"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-slate-500 mb-1">
+              <span>Standart Windows 11:</span>
+              <span>66 FPS (Micro-Stutter)</span>
+            </div>
+            <div class="w-full bg-white/5 h-2 rounded-full overflow-hidden">
+              <div class="bg-slate-600 h-full w-[60%] rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 👑 VIP & LİSANS AYRICALIKLARI (#vip) -->
+  <section id="vip" class="py-20 px-6 max-w-6xl mx-auto relative z-10">
+    <div class="glass-card rounded-[32px] p-8 sm:p-12 border-2 border-amber-400/40 glow-amber relative overflow-hidden space-y-8">
+      
+      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-6">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400 text-black text-xs font-black mb-2">
+            <i data-lucide="crown" class="w-3.5 h-3.5 fill-current"></i>
+            <span>OPTICORE VIP & TOPLULUK MERKEZİ</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Doğrulanmış VIP Kulübü ve Discord Ayrıcalıkları</h2>
+          <p class="text-xs text-slate-400 mt-1">OptiCore Studio Pro'da VIP lisansı veya Discord bağlantısı ile açılan derin donanım avantajları.</p>
+        </div>
+
+        <div class="flex items-center gap-2 font-mono text-xs text-amber-300 bg-amber-400/10 px-4 py-2 rounded-2xl border border-amber-400/30">
+          <i data-lucide="sparkles" class="w-4 h-4 text-amber-400"></i>
+          <span>LİSANS AKTİF (v1.0.7 READY)</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-[#0e121c] border border-amber-400/30 space-y-4 hover:border-amber-400 transition-all">
+          <div class="flex justify-between items-start">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-400 to-yellow-500 text-black flex items-center justify-center font-black text-lg shadow-lg shadow-amber-500/30">
+              👑
+            </div>
+            <span class="text-[9.5px] font-mono px-2 py-0.5 rounded-full bg-amber-400 text-black font-black">KURUCU & DEV</span>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-white">6Closy (Lead Developer)</h3>
+            <p class="text-xs text-slate-400 mt-1">Sistem mimarı, 5'li FPS motorunun yöneticisi ve tüm bulut veritabanında en üst düzey yetki.</p>
+          </div>
+          <ul class="text-xs text-slate-300 space-y-2 border-t border-white/5 pt-3 font-mono">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Yönetici Root Konsolu</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Canlı Toplu Duyuru (Broadcast)</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Lisans Anahtarı Üretimi</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-[#0e121c] border border-purple-500/40 space-y-4 hover:border-purple-400 transition-all glow-purple">
+          <div class="flex justify-between items-start">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-500 to-indigo-600 text-white flex items-center justify-center font-black text-lg shadow-lg shadow-purple-500/30">
+              💎
+            </div>
+            <span class="text-[9.5px] font-mono px-2 py-0.5 rounded-full bg-purple-500 text-white font-black">VIP PRO ÜYE</span>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-white">Doğrulanmış VIP Statüsü</h3>
+            <p class="text-xs text-slate-400 mt-1">Lisans anahtarı giren kullanıcılara özel unvanlar, parlayan rozetler ve sınırsız espor kilidi.</p>
+          </div>
+          <ul class="text-xs text-slate-300 space-y-2 border-t border-white/5 pt-3 font-mono">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i> Ortak Bulut Üye Eşitlemesi</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i> Otomatik Sentinel RAM Nöbetçisi</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i> Özel Durum (Status) Düzenleme</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-[#0e121c] border border-cyan-500/40 space-y-4 hover:border-cyan-400 transition-all glow-cyan">
+          <div class="flex justify-between items-start">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-cyan-400 to-blue-600 text-black flex items-center justify-center font-black text-lg shadow-lg shadow-cyan-500/30">
+              🎮
+            </div>
+            <span class="text-[9.5px] font-mono px-2 py-0.5 rounded-full bg-cyan-400 text-black font-black">DISCORD RPC</span>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-white">Discord Zengin Varlık</h3>
+            <p class="text-xs text-slate-400 mt-1">Discord profilinizde havalı "OptiCore Studio Pro - %100 Optimize" rozeti ve süresi parlar.</p>
+          </div>
+          <ul class="text-xs text-slate-300 space-y-2 border-t border-white/5 pt-3 font-mono">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Tek Tıkla Discord Girişi</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Özel Avatar & İsim Çekme</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Doğrulanmış Profil Rozeti</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🎮 İNTERAKTİF CANLI SİMÜLASYON WIDGET (#demo) -->
+  <section id="demo" class="py-14 px-6 max-w-5xl mx-auto relative z-10">
+    <div class="text-center space-y-2 mb-8">
+      <div class="inline-flex items-center gap-2 text-xs font-mono font-bold text-cyan-400 bg-cyan-400/10 px-3 py-1 rounded-full border border-cyan-400/20">
+        <i data-lucide="terminal" class="w-3.5 h-3.5"></i> CANLI ARAYÜZ TESTİ
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Tarayıcınızda OptiCore Studio'yu Deneyin</h2>
+      <p class="text-xs text-slate-400">Aşağıdaki butona basarak FPS motorunun ve RAM temizleyicinin çalışma anını canlı simüle edin.</p>
+    </div>
+
+    <div class="glass-card rounded-[32px] p-4 sm:p-7 border-2 border-cyan-500/30 glow-cyan relative overflow-hidden">
+      <div class="bg-[#0b0f17] rounded-2xl p-4 flex flex-wrap items-center justify-between gap-3 border-b border-white/10">
+        <div class="flex items-center gap-3">
+          <div class="flex items-center gap-1.5">
+            <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+          </div>
+          <span class="text-xs font-bold text-slate-200 ml-1">OptiCore Studio Pro v1.0.7 [Canlı Simülatör]</span>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <span class="text-[10px] font-mono px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+            ● 6Closy DEV & KURUCU
+          </span>
+        </div>
+      </div>
+
+      <div class="bg-[#070a10] p-6 rounded-b-2xl space-y-6">
+        <div id="simTurboBanner" class="p-5 rounded-2xl bg-gradient-to-r from-cyan-600/20 via-blue-600/15 to-indigo-600/20 border border-cyan-500/40 flex flex-wrap items-center justify-between gap-4 transition-all duration-500">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-cyan-400 to-blue-600 text-black flex items-center justify-center font-black shadow-lg shadow-cyan-500/40">
+              <i data-lucide="zap" class="w-6 h-6 fill-current"></i>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white flex items-center gap-2">
+                <span id="simEngineTitle">5'li Ultra Esport FPS Motoru</span>
+                <span id="simEngineBadge" class="text-[9.5px] px-2.5 py-0.5 rounded-full bg-cyan-400 text-black font-black">HAZIR</span>
+              </div>
+              <p class="text-xs text-slate-300 mt-0.5">CPU Core Unparking, GPU HAGS ve Arka Plan Kısıcı hazırda bekliyor.</p>
+            </div>
+          </div>
+
+          <button onclick="triggerSimBoost()" id="simBoostBtn" class="px-5 py-3 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-black font-black text-xs flex items-center gap-2 shadow-lg shadow-cyan-400/30 active:scale-95 transition-all">
+            <i data-lucide="flame" class="w-4 h-4"></i>
+            <span>ULTRA FPS MOTORUNU ÇALIŞTIR</span>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono">
+          <div class="bg-[#0e131f] border border-white/5 p-4 rounded-2xl space-y-2">
+            <div class="flex justify-between text-xs text-slate-400">
+              <span class="flex items-center gap-1.5 text-white font-sans font-semibold"><i data-lucide="radio" class="w-4 h-4 text-emerald-400"></i> Oyun FPS</span>
+              <span id="simFpsStatus" class="text-slate-400 font-bold">NORMAL</span>
+            </div>
+            <div id="simFpsValue" class="text-3xl font-black text-white">144 <span class="text-xs text-slate-400">FPS</span></div>
+            <div class="w-full bg-white/5 h-2 rounded-full overflow-hidden">
+              <div id="simFpsBar" class="bg-cyan-400 h-full w-[60%] rounded-full transition-all duration-700"></div>
+            </div>
+          </div>
+
+          <div class="bg-[#0e131f] border border-white/5 p-4 rounded-2xl space-y-2">
+            <div class="flex justify-between text-xs text-slate-400">
+              <span class="flex items-center gap-1.5 text-white font-sans font-semibold"><i data-lucide="cpu" class="w-4 h-4 text-sky-400"></i> CPU Saat Hızı</span>
+              <span id="simCpuStatus" class="text-slate-400 font-bold">DEĞİŞKEN</span>
+            </div>
+            <div id="simCpuValue" class="text-3xl font-black text-sky-400">3.8 <span class="text-xs text-slate-400">GHz</span></div>
+            <div class="w-full bg-white/5 h-2 rounded-full overflow-hidden">
+              <div id="simCpuBar" class="bg-sky-400 h-full w-[70%] rounded-full transition-all duration-700"></div>
+            </div>
+          </div>
+
+          <div class="bg-[#0e131f] border border-white/5 p-4 rounded-2xl space-y-2">
+            <div class="flex justify-between text-xs text-slate-400">
+              <span class="flex items-center gap-1.5 text-white font-sans font-semibold"><i data-lucide="hard-drive" class="w-4 h-4 text-indigo-400"></i> Giriş Gecikmesi</span>
+              <span id="simLagStatus" class="text-amber-400 font-bold">8.4 ms</span>
+            </div>
+            <div id="simLagValue" class="text-3xl font-black text-amber-400">8.4 <span class="text-xs text-slate-400">ms</span></div>
+            <div class="w-full bg-white/5 h-2 rounded-full overflow-hidden">
+              <div id="simLagBar" class="bg-amber-400 h-full w-[50%] rounded-full transition-all duration-700"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -195,12 +662,11 @@
       </div>
 
       <span class="text-xs font-mono font-bold px-3 py-1 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded-xl">
-        GÜNCEL: v1.0.8 STABLE
+        GÜNCEL: v1.0.7 STABLE
       </span>
     </div>
 
     <div class="space-y-8">
-      <!-- v1.0.8 (EN YENİ SÜRÜM) -->
       <div class="glass-card rounded-3xl p-6 sm:p-8 border-2 border-cyan-500/40 glow-cyan relative space-y-5">
         <div class="flex flex-wrap items-center justify-between gap-3">
           <div class="flex items-center gap-3">
@@ -212,37 +678,37 @@
             </div>
             <div>
               <div class="flex items-center gap-2.5">
-                <h3 class="text-lg font-bold text-white">OptiCore Studio PRO v1.0.8</h3>
+                <h3 class="text-lg font-bold text-white">OptiCore Studio PRO v1.0.7</h3>
                 <span class="px-2 py-0.5 rounded-full bg-cyan-400 text-black text-[10px] font-black">EN SON SÜRÜM</span>
               </div>
-              <p class="text-xs text-slate-400 font-mono mt-0.5">Yayınlanma: 22 Ağustos 2026 • Discord Bot Otomasyonu & Zırhlı Güncelleme Motoru</p>
+              <p class="text-xs text-slate-400 font-mono mt-0.5">Yayınlanma: 22 Ağustos 2026 • 5'li Ultra Esport FPS & Bulut Güncellemesi</p>
             </div>
           </div>
 
-          <a href="https://github.com/Liqer01/OptiCore-/releases/latest/download/OptiCore.Studio.Setup.1.0.8.exe" class="px-4 py-2 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-black font-extrabold text-xs flex items-center gap-1.5 transition-all shadow-md">
+          <a href="https://github.com/Liqer01/OptiCore-/releases/latest/download/OptiCore.Studio.Setup.1.0.7.exe" class="px-4 py-2 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-black font-extrabold text-xs flex items-center gap-1.5 transition-all shadow-md">
             <i data-lucide="download" class="w-3.5 h-3.5"></i>
-            <span>v1.0.8 İndir</span>
+            <span>v1.0.7 İndir</span>
           </a>
         </div>
 
         <div class="space-y-3 pt-2 border-t border-white/5 text-xs text-slate-300">
-          <h4 class="font-bold text-cyan-300 uppercase tracking-wider font-mono text-[11px]">🔥 v1.0.8 İle Eklenen Yenilikler:</h4>
+          <h4 class="font-bold text-cyan-300 uppercase tracking-wider font-mono text-[11px]">🔥 Eklenen Başlıca Yenilikler:</h4>
           <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-normal">
             <li class="p-3 bg-black/40 rounded-xl border border-white/5 space-y-1">
-              <strong class="text-white flex items-center gap-1.5"><i data-lucide="bot" class="w-3.5 h-3.5 text-purple-400"></i> Discord Bot VIP Otomasyonu</strong>
-              <p class="text-slate-400 text-[11px]">Uygulamadan bağlanan ve VIP lisansı alan tüm üyelere Discord'da anında VIP PRO rolü atanır.</p>
+              <strong class="text-white flex items-center gap-1.5"><i data-lucide="cpu" class="w-3.5 h-3.5 text-cyan-400"></i> CPU Core Unparking</strong>
+              <p class="text-slate-400 text-[11px]">Windows'un işlemci çekirdeklerini uyutması engellendi, tüm çekirdekler saat hızına (%100 GHz) kilitlendi (+20-45 FPS).</p>
             </li>
             <li class="p-3 bg-black/40 rounded-xl border border-white/5 space-y-1">
-              <strong class="text-white flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-cyan-400"></i> Zırhlı Güncelleme Butonu</strong>
-              <p class="text-slate-400 text-[11px]">Çift motorlu indirme desteği (uygulama içi otomatik kurucu + tarayıcı fallback).</p>
+              <strong class="text-white flex items-center gap-1.5"><i data-lucide="gauge" class="w-3.5 h-3.5 text-purple-400"></i> GPU HAGS & DirectX 12</strong>
+              <p class="text-slate-400 text-[11px]">Donanım Hızlandırmalı GPU Zamanlaması ve düşük gecikmeli render motoru devreye alındı.</p>
             </li>
             <li class="p-3 bg-black/40 rounded-xl border border-white/5 space-y-1">
-              <strong class="text-white flex items-center gap-1.5"><i data-lucide="crown" class="w-3.5 h-3.5 text-amber-400"></i> Kusursuz Yetki Ayrımı</strong>
-              <p class="text-slate-400 text-[11px]">Sadece 6Closy DEV & Kurucu rozetine sahiptir; diğer tüm üyeler VIP PRO statüsü alır.</p>
+              <strong class="text-white flex items-center gap-1.5"><i data-lucide="users" class="w-3.5 h-3.5 text-emerald-400"></i> Canlı Bulut Üye Senkronizasyonu</strong>
+              <p class="text-slate-400 text-[11px]">Tüm aktif Discord ve VIP kullanıcıları anlık olarak ortak bulut veritabanında eşitlendi.</p>
             </li>
             <li class="p-3 bg-black/40 rounded-xl border border-white/5 space-y-1">
-              <strong class="text-white flex items-center gap-1.5"><i data-lucide="zap" class="w-3.5 h-3.5 text-emerald-400"></i> 5'li Ultra Esport FPS Motoru</strong>
-              <p class="text-slate-400 text-[11px]">Core Unparking, GPU HAGS ve GameDVR kısıtlamaları 0ms gecikmeyle aktiftir (+20-45 FPS).</p>
+              <strong class="text-white flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-indigo-400"></i> Akıllı Oyun Whitelist Kalkanı</strong>
+              <p class="text-slate-400 text-[11px]">RAM temizleyici açık oyunlara asla dokunmaz, doku yırtılmalarını ve anlık takılmaları sıfırlar.</p>
             </li>
           </ul>
         </div>
@@ -268,13 +734,80 @@
 
       <div class="flex items-center gap-6 font-mono text-[11px]">
         <a href="https://github.com/Liqer01/OptiCore-" target="_blank" class="hover:text-cyan-400 transition-colors">GitHub Repository</a>
-        <a href="https://github.com/Liqer01/OptiCore-/releases/latest" target="_blank" class="hover:text-white transition-colors">v1.0.8 İndir</a>
+        <a href="https://github.com/Liqer01/OptiCore-/releases/latest" target="_blank" class="hover:text-white transition-colors">En Son v1.0.7 İndir</a>
       </div>
     </div>
   </footer>
 
   <script>
     lucide.createIcons();
+
+    let isBoosted = false;
+    function triggerSimBoost() {
+      const banner = document.getElementById('simTurboBanner');
+      const badge = document.getElementById('simEngineBadge');
+      const btn = document.getElementById('simBoostBtn');
+      const fpsVal = document.getElementById('simFpsValue');
+      const fpsBar = document.getElementById('simFpsBar');
+      const fpsStatus = document.getElementById('simFpsStatus');
+      const cpuVal = document.getElementById('simCpuValue');
+      const cpuBar = document.getElementById('simCpuBar');
+      const cpuStatus = document.getElementById('simCpuStatus');
+      const lagVal = document.getElementById('simLagValue');
+      const lagBar = document.getElementById('simLagBar');
+      const lagStatus = document.getElementById('simLagStatus');
+
+      isBoosted = !isBoosted;
+
+      if (isBoosted) {
+        banner.className = 'p-5 rounded-2xl bg-gradient-to-r from-emerald-600/30 via-teal-600/20 to-cyan-600/30 border-2 border-emerald-400 flex flex-wrap items-center justify-between gap-4 transition-all duration-500 shadow-2xl glow-emerald';
+        badge.className = 'text-[9.5px] px-2.5 py-0.5 rounded-full bg-emerald-400 text-black font-black';
+        badge.innerText = '⚡ %100 AKTİF & KİLİTLİ';
+        btn.className = 'px-5 py-3 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-black font-black text-xs flex items-center gap-2 shadow-lg shadow-emerald-400/30 active:scale-95 transition-all';
+        btn.innerHTML = '<i data-lucide="check" class="w-4 h-4"></i><span>ULTRA MOD AKTİF (+45 FPS)</span>';
+        
+        fpsVal.innerHTML = '240 <span class="text-xs text-emerald-400">FPS</span>';
+        fpsVal.className = 'text-3xl font-black text-emerald-400';
+        fpsBar.className = 'bg-emerald-400 h-full w-[100%] rounded-full transition-all duration-700';
+        fpsStatus.className = 'text-emerald-400 font-bold';
+        fpsStatus.innerText = 'KİLİTLENDİ';
+
+        cpuVal.innerHTML = '5.1 <span class="text-xs text-cyan-400">GHz</span>';
+        cpuBar.className = 'bg-cyan-400 h-full w-[100%] rounded-full transition-all duration-700';
+        cpuStatus.className = 'text-cyan-400 font-bold';
+        cpuStatus.innerText = '%100 UNPARKED';
+
+        lagVal.innerHTML = '0.1 <span class="text-xs text-emerald-400">ms</span>';
+        lagVal.className = 'text-3xl font-black text-emerald-400';
+        lagBar.className = 'bg-emerald-400 h-full w-[10%] rounded-full transition-all duration-700';
+        lagStatus.className = 'text-emerald-400 font-bold';
+        lagStatus.innerText = 'SIFIR GECİKME';
+      } else {
+        banner.className = 'p-5 rounded-2xl bg-gradient-to-r from-cyan-600/20 via-blue-600/15 to-indigo-600/20 border border-cyan-500/40 flex flex-wrap items-center justify-between gap-4 transition-all duration-500';
+        badge.className = 'text-[9.5px] px-2.5 py-0.5 rounded-full bg-cyan-400 text-black font-black';
+        badge.innerText = 'HAZIR';
+        btn.className = 'px-5 py-3 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-black font-black text-xs flex items-center gap-2 shadow-lg shadow-cyan-400/30 active:scale-95 transition-all';
+        btn.innerHTML = '<i data-lucide="flame" class="w-4 h-4"></i><span>ULTRA FPS MOTORUNU ÇALIŞTIR</span>';
+
+        fpsVal.innerHTML = '144 <span class="text-xs text-slate-400">FPS</span>';
+        fpsVal.className = 'text-3xl font-black text-white';
+        fpsBar.className = 'bg-cyan-400 h-full w-[60%] rounded-full transition-all duration-700';
+        fpsStatus.className = 'text-slate-400 font-bold';
+        fpsStatus.innerText = 'NORMAL';
+
+        cpuVal.innerHTML = '3.8 <span class="text-xs text-slate-400">GHz</span>';
+        cpuBar.className = 'bg-sky-400 h-full w-[70%] rounded-full transition-all duration-700';
+        cpuStatus.className = 'text-slate-400 font-bold';
+        cpuStatus.innerText = 'DEĞİŞKEN';
+
+        lagVal.innerHTML = '8.4 <span class="text-xs text-slate-400">ms</span>';
+        lagVal.className = 'text-3xl font-black text-amber-400';
+        lagBar.className = 'bg-amber-400 h-full w-[50%] rounded-full transition-all duration-700';
+        lagStatus.className = 'text-amber-400 font-bold';
+        lagStatus.innerText = '8.4 ms';
+      }
+      lucide.createIcons();
+    }
   </script>
 </body>
 </html>

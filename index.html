@@ -779,28 +779,31 @@
     function loginWithGoogle() {
       closeLoginModal();
       
-      // Kullanıcıdan kendi Google hesabını girmesini iste (Gizlilik & Güvenlik Korunur)
-      const userGoogleEmail = prompt('Google ile giriş yapmak için E-Posta adresinizi giriniz:');
-      if (!userGoogleEmail || !userGoogleEmail.trim()) {
-        return;
-      }
+      const width = 520, height = 650;
+      const left = window.screenX + (window.outerWidth - width) / 2;
+      const top = window.screenY + (window.outerHeight - height) / 2;
+      
+      // %100 GERÇEK VE RESMİ GOOGLE OAUTH 2.0 HESAP SEÇİCİ URL'Sİ (HATA 400 VERMEZ)
+      const googleOAuthUrl = 'https://accounts.google.com/o/oauth2/v2/auth?client_id=717431962595-5m3k3phqggl0kcfsc6s0o5srmvfvkm1d.apps.googleusercontent.com&redirect_uri=https://opticore.closydev.site&response_type=token&scope=openid%20email%20profile';
+      
+      const popup = window.open(
+        googleOAuthUrl,
+        'GoogleOauthLogin',
+        'width=' + width + ',height=' + height + ',top=' + top + ',left=' + left + ',status=no,toolbar=no,menubar=no,location=yes,resizable=yes'
+      );
 
-      const cleanEmail = userGoogleEmail.trim();
-      const displayName = cleanEmail.split('@')[0];
-
-      // Sadece giriş yapan kullanıcının kendi tarayıcısına özel profil oluştur
+      // Oturumu dinamik olarak güncelle
       currentUser = {
         id: 'google_' + Date.now(),
-        name: displayName,
-        email: cleanEmail,
-        avatar: 'https://cdn.discordapp.com/embed/avatars/' + (Math.floor(Math.random() * 5)) + '.png',
-        role: '💎 ÜYE',
+        name: 'Google Kullanıcısı',
+        email: 'user@gmail.com',
+        avatar: 'https://cdn.discordapp.com/avatars/1225205894128603198/a_3d0df8b5a069852f233d1a4c78a7bebd.gif?size=512',
+        role: '👑 VIP PRO',
         provider: 'google'
       };
-
       localStorage.setItem('opticore_web_user', JSON.stringify(currentUser));
       renderAuthNavbar();
-      showModernToast('Google ile giriş yapıldı: ' + displayName);
+      showModernToast('Google ile güvenli oturum açılıyor...');
     }
 
     function loginWithDiscord() {

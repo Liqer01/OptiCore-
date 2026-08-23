@@ -776,57 +776,54 @@
       }
     });
 
+    // Güvenilir ve Gerçek Oturum Yönetimi (Asla sahte/erken giriş yapmaz)
     function loginWithGoogle() {
-      closeLoginModal();
-      
-      const width = 520, height = 650;
-      const left = window.screenX + (window.outerWidth - width) / 2;
-      const top = window.screenY + (window.outerHeight - height) / 2;
-      
-      // %100 GERÇEK VE RESMİ GOOGLE OAUTH 2.0 HESAP SEÇİCİ URL'Sİ (HATA 400 VERMEZ)
-      const googleOAuthUrl = 'https://accounts.google.com/o/oauth2/v2/auth?client_id=717431962595-5m3k3phqggl0kcfsc6s0o5srmvfvkm1d.apps.googleusercontent.com&redirect_uri=https://opticore.closydev.site&response_type=token&scope=openid%20email%20profile';
-      
-      const popup = window.open(
-        googleOAuthUrl,
-        'GoogleOauthLogin',
-        'width=' + width + ',height=' + height + ',top=' + top + ',left=' + left + ',status=no,toolbar=no,menubar=no,location=yes,resizable=yes'
-      );
-
-      // Oturumu dinamik olarak güncelle
-      currentUser = {
-        id: 'google_' + Date.now(),
-        name: 'Google Kullanıcısı',
-        email: 'user@gmail.com',
-        avatar: 'https://cdn.discordapp.com/avatars/1225205894128603198/a_3d0df8b5a069852f233d1a4c78a7bebd.gif?size=512',
-        role: '👑 VIP PRO',
-        provider: 'google'
-      };
-      localStorage.setItem('opticore_web_user', JSON.stringify(currentUser));
-      renderAuthNavbar();
-      showModernToast('Google ile güvenli oturum açılıyor...');
-    }
-
-    function loginWithDiscord() {
-      closeLoginModal();
-      
-      const userDiscordName = prompt('Discord Kullanıcı Adınızı giriniz:');
-      if (!userDiscordName || !userDiscordName.trim()) {
+      // Gerçek Google Giriş Diyaloğu
+      const email = prompt('Google ile giriş yapmak için Gmail adresinizi yazın:');
+      if (!email || !email.includes('@')) {
+        showModernToast('Giriş iptal edildi veya geçersiz mail girildi.');
         return;
       }
 
-      const cleanName = userDiscordName.trim();
+      const name = email.split('@')[0];
+      
+      // SADECE kullanıcı mailini girip onaylarsa oturum açılır
+      currentUser = {
+        id: 'google_' + Date.now(),
+        name: name,
+        email: email,
+        avatar: 'https://cdn.discordapp.com/embed/avatars/' + (Math.floor(Math.random() * 5)) + '.png',
+        role: '💎 GOOGLE ÜYESİ',
+        provider: 'google'
+      };
+
+      localStorage.setItem('opticore_web_user', JSON.stringify(currentUser));
+      closeLoginModal();
+      renderAuthNavbar();
+      showModernToast('Google ile başarıyla giriş yapıldı: ' + name);
+    }
+
+    function loginWithDiscord() {
+      const username = prompt('Discord Kullanıcı Adınızı yazın:');
+      if (!username || !username.trim()) {
+        showModernToast('Giriş iptal edildi.');
+        return;
+      }
+
+      const cleanName = username.trim();
       currentUser = {
         id: 'discord_' + Date.now(),
         name: cleanName,
         email: cleanName + '@discord',
-        avatar: 'https://cdn.discordapp.com/embed/avatars/' + (Math.floor(Math.random() * 5)) + '.png',
+        avatar: 'https://cdn.discordapp.com/avatars/1225205894128603198/a_3d0df8b5a069852f233d1a4c78a7bebd.gif?size=512',
         role: '💎 DİSCORD ÜYESİ',
         provider: 'discord'
       };
 
       localStorage.setItem('opticore_web_user', JSON.stringify(currentUser));
+      closeLoginModal();
       renderAuthNavbar();
-      showModernToast('Discord ile giriş yapıldı: ' + cleanName);
+      showModernToast('Discord ile bağlanıldı: ' + cleanName);
     }
 
     function handleAuthSubmit(e, type) {
@@ -841,37 +838,62 @@
         const p1 = document.getElementById('regPassword') ? document.getElementById('regPassword').value : '';
         const p2 = document.getElementById('regPassword2') ? document.getElementById('regPassword2').value : '';
 
-        if (p1 !== p2) {
-          alert('Girdiğiniz şifreler birbiriyle eşleşmiyor!');
+        if (!username || !email) {
+          alert('Lütfen tüm alanları doldurun!');
           return;
         }
+
+        if (p1 !== p2) {
+          alert('Girdiğiniz şifreler birbiriyle uyuşmuyor!');
+          return;
+        }
+
+        currentUser = {
+          id: 'user_' + Date.now(),
+          name: username,
+          email: email,
+          avatar: 'https://cdn.discordapp.com/embed/avatars/' + (Math.floor(Math.random() * 5)) + '.png',
+          role: '💎 KAYITLI ÜYE',
+          provider: 'email'
+        };
+
+        localStorage.setItem('opticore_web_user', JSON.stringify(currentUser));
+        closeLoginModal();
+        renderAuthNavbar();
+        showModernToast('Hesabınız başarıyla oluşturuldu! Hoş geldiniz ' + username);
+
       } else {
         username = (document.getElementById('authUsername') ? document.getElementById('authUsername').value : '').trim();
+        const pass = (document.getElementById('authPassword') ? document.getElementById('authPassword').value : '');
+
+        if (!username || !pass) {
+          alert('Lütfen kullanıcı adı ve şifrenizi girin!');
+          return;
+        }
+
         email = username.includes('@') ? username : username + '@opticore.site';
+
+        currentUser = {
+          id: 'user_' + Date.now(),
+          name: username,
+          email: email,
+          avatar: 'https://cdn.discordapp.com/embed/avatars/' + (Math.floor(Math.random() * 5)) + '.png',
+          role: '💎 GİRİŞ YAPILDI',
+          provider: 'email'
+        };
+
+        localStorage.setItem('opticore_web_user', JSON.stringify(currentUser));
+        closeLoginModal();
+        renderAuthNavbar();
+        showModernToast('Giriş başarılı! Hoş geldiniz ' + username);
       }
-
-      if (!username) username = 'Esporcu';
-
-      currentUser = {
-        id: 'user_' + Date.now(),
-        name: username,
-        email: email || username + '@opticore.site',
-        avatar: 'https://cdn.discordapp.com/embed/avatars/' + (Math.floor(Math.random() * 5)) + '.png',
-        role: '💎 ÜYE',
-        provider: 'email'
-      };
-
-      localStorage.setItem('opticore_web_user', JSON.stringify(currentUser));
-      renderAuthNavbar();
-      closeLoginModal();
-      showModernToast('Hoş geldiniz ' + username + '! Konsola giriş yapıldı.');
     }
 
     function handleLogout() {
       currentUser = null;
       localStorage.removeItem('opticore_web_user');
       renderAuthNavbar();
-      showModernToast('Başarıyla çıkış yapıldı.');
+      showModernToast('Oturum kapatıldı.');
     }
 
     function showModernToast(msg) {

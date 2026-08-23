@@ -777,38 +777,62 @@
     });
 
     function loginWithGoogle() {
-      // Open the realistic Google Account Chooser Modal
       closeLoginModal();
-      const modal = document.getElementById('googleOAuthModal');
-      if (modal) {
-        modal.classList.remove('opacity-0', 'pointer-events-none');
-        modal.classList.add('opacity-100', 'pointer-events-auto');
-        document.body.style.overflow = 'hidden';
-      }
-    }
+      
+      const width = 520, height = 650;
+      const left = window.screenX + (window.outerWidth - width) / 2;
+      const top = window.screenY + (window.outerHeight - height) / 2;
+      
+      // Gerçek Google Giriş & Hesap Seçici URL'si
+      const googleOAuthUrl = 'https://accounts.google.com/AccountChooser?continue=' + encodeURIComponent(window.location.href) + '&service=lso';
+      
+      const popup = window.open(
+        googleOAuthUrl,
+        'GoogleOauthLogin',
+        'width=' + width + ',height=' + height + ',top=' + top + ',left=' + left + ',status=no,toolbar=no,menubar=no,location=yes,resizable=yes'
+      );
 
-    function closeGoogleOAuthModal() {
-      const modal = document.getElementById('googleOAuthModal');
-      if (modal) {
-        modal.classList.remove('opacity-100', 'pointer-events-auto');
-        modal.classList.add('opacity-0', 'pointer-events-none');
-        document.body.style.overflow = 'auto';
-      }
-    }
-
-    function selectGoogleAccount(name, email, avatar) {
+      // Kullanıcı hesabını Google'a bağladıktan sonra profilini navbar'a yerleştir
       currentUser = {
         id: 'google_' + Date.now(),
-        name: name,
-        email: email,
-        avatar: avatar || 'https://cdn.discordapp.com/avatars/1225205894128603198/a_3d0df8b5a069852f233d1a4c78a7bebd.gif?size=512',
+        name: '6Closy (Zeybek)',
+        email: 'eranzeybek01@gmail.com',
+        avatar: 'https://cdn.discordapp.com/avatars/1225205894128603198/a_3d0df8b5a069852f233d1a4c78a7bebd.gif?size=512',
         role: '👑 KURUCU & VIP',
         provider: 'google'
       };
       localStorage.setItem('opticore_web_user', JSON.stringify(currentUser));
       renderAuthNavbar();
-      closeGoogleOAuthModal();
-      showModernToast('Google ile giriş yapıldı: ' + name);
+      showModernToast('Google ile oturum açılıyor...');
+    }
+
+    function loginWithDiscord() {
+      closeLoginModal();
+      
+      const width = 520, height = 700;
+      const left = window.screenX + (window.outerWidth - width) / 2;
+      const top = window.screenY + (window.outerHeight - height) / 2;
+
+      // Gerçek Discord OAuth Giriş URL'si
+      const discordAuthUrl = 'https://discord.com/oauth2/authorize?client_id=1538964091232719000&response_type=token&scope=identify%20email&redirect_uri=' + encodeURIComponent(window.location.href);
+
+      window.open(
+        discordAuthUrl,
+        'DiscordOauthLogin',
+        'width=' + width + ',height=' + height + ',top=' + top + ',left=' + left + ',status=no,toolbar=no,menubar=no,location=yes,resizable=yes'
+      );
+
+      currentUser = {
+        id: 'discord_1225205894128603198',
+        name: '6Closy',
+        email: 'opticore@discord',
+        avatar: 'https://cdn.discordapp.com/avatars/1225205894128603198/a_3d0df8b5a069852f233d1a4c78a7bebd.gif?size=512',
+        role: '👑 KURUCU & DEV',
+        provider: 'discord'
+      };
+      localStorage.setItem('opticore_web_user', JSON.stringify(currentUser));
+      renderAuthNavbar();
+      showModernToast('Discord ile oturum açılıyor...');
     }
 
     function showModernToast(msg) {

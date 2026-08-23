@@ -34,15 +34,18 @@
       overflow-x: hidden;
     }
     .bg-grid {
-      background-image: radial-gradient(rgba(0, 242, 254, 0.09) 1px, transparent 1px);
+      background-image: radial-gradient(rgba(0, 242, 254, 0.08) 1px, transparent 1px);
       background-size: 32px 32px;
     }
     .glow-cyan {
       box-shadow: 0 0 60px -10px rgba(0, 242, 254, 0.35);
     }
+    .glow-purple {
+      box-shadow: 0 0 60px -10px rgba(168, 85, 247, 0.35);
+    }
     .glass-card {
-      background: rgba(12, 16, 26, 0.75);
-      backdrop-filter: blur(16px);
+      background: rgba(12, 16, 26, 0.8);
+      backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
     .custom-scrollbar::-webkit-scrollbar {
@@ -54,7 +57,7 @@
     }
     @keyframes pulseGlow {
       0%, 100% { opacity: 0.4; transform: scale(1); }
-      50% { opacity: 0.8; transform: scale(1.05); }
+      50% { opacity: 0.8; transform: scale(1.04); }
     }
     .animate-glow {
       animation: pulseGlow 4s infinite ease-in-out;
@@ -64,7 +67,7 @@
 <body class="bg-grid min-h-screen flex flex-col selection:bg-cyan-500 selection:text-black">
 
   <!-- 🌟 NAVBAR -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-[#05070d]/80 backdrop-blur-xl border-b border-white/10">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#05070d]/85 backdrop-blur-xl border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
       <!-- Logo -->
@@ -87,21 +90,28 @@
           <span>FPS Simülatörü</span>
           <span class="text-[9px] px-1.5 py-0.5 bg-rose-500 text-white rounded font-bold">CANLI</span>
         </a>
-        <a href="#jarvis" class="hover:text-cyan-400 transition-colors">Jarvis AI</a>
+        <a href="#jarvis" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5">
+          <span>Jarvis AI</span>
+          <span class="text-[9px] px-1.5 py-0.5 bg-purple-500 text-white rounded font-bold">ONLINE</span>
+        </a>
         <a href="#compare" class="hover:text-cyan-400 transition-colors">VIP vs Free</a>
         <a href="#security" class="hover:text-cyan-400 transition-colors">Anti-Cheat Güvenliği</a>
       </nav>
 
       <!-- Action Buttons -->
       <div class="flex items-center gap-3">
-        <a href="https://discord.gg/vS35K27K" target="_blank" class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl bg-[#5865F2]/20 hover:bg-[#5865F2]/30 text-[#8ea1e1] border border-[#5865F2]/40 text-xs font-bold transition-all shadow-lg shadow-[#5865F2]/10">
-          <i data-lucide="message-square" class="w-4 h-4"></i>
-          <span>Discord Topluluğu</span>
+        <!-- Discord Topluluğu Butonu (Resmi Logo & discord.gg/opticore) -->
+        <a href="https://discord.gg/opticore" target="_blank" class="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-[#5865F2]/15 hover:bg-[#5865F2]/25 text-[#9baaff] border border-[#5865F2]/40 text-xs font-bold transition-all shadow-lg shadow-[#5865F2]/10 hover:scale-105 active:scale-95">
+          <svg class="w-4 h-4 fill-current text-[#5865F2]" viewBox="0 0 127.14 96.36">
+            <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,45.91,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,45.91,96.12,53,91.08,65.69,84.69,65.69Z"/>
+          </svg>
+          <span>Discord: discord.gg/opticore</span>
         </a>
 
-        <a href="https://github.com/Liqer01/OptiCore-/releases/latest" target="_blank" class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 hover:from-cyan-300 hover:to-indigo-500 text-black font-extrabold text-xs shadow-lg shadow-cyan-500/25 active:scale-95 transition-all">
+        <!-- İndirme Butonu -->
+        <a href="https://github.com/Liqer01/OptiCore-/releases/latest" target="_blank" class="hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 hover:from-cyan-300 hover:to-indigo-500 text-black font-extrabold text-xs shadow-lg shadow-cyan-500/25 active:scale-95 transition-all">
           <i data-lucide="download" class="w-4 h-4"></i>
-          <span>v1.0.9 İndir (Win 11/10)</span>
+          <span>v1.0.9 İndir</span>
         </a>
       </div>
 
@@ -114,10 +124,10 @@
       
       <!-- Top Announcement Badge -->
       <div class="flex justify-center mb-6">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-semibold backdrop-blur-md shadow-lg shadow-cyan-500/10">
+        <a href="https://discord.gg/opticore" target="_blank" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-semibold backdrop-blur-md shadow-lg shadow-cyan-500/10 hover:scale-105 transition-all">
           <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-          <span>OptiCore Studio v1.0.9 Yayınlandı! • 5'li Ultra Esport FPS Motoru Devrede</span>
-        </div>
+          <span>OptiCore Studio v1.0.9 Yayında! • discord.gg/opticore</span>
+        </a>
       </div>
 
       <!-- Main Headline -->
@@ -128,7 +138,7 @@
         </h1>
         
         <p class="text-base sm:text-xl text-slate-400 font-normal max-w-2xl mx-auto leading-relaxed">
-          Windows'un gizli kilitlerini kırın. <span class="text-cyan-300 font-semibold">Core Unparking</span>, <span class="text-cyan-300 font-semibold">DirectX GPU HAGS</span>, <span class="text-purple-300 font-semibold">0ms Giriş Gecikmesi</span> ve <span class="text-emerald-300 font-semibold">Jarvis AI</span> ile oyunlarda akıcı espor performansına ulaşın.
+          Windows'un espor kilitlerini kaldırın. <span class="text-cyan-300 font-semibold">Core Unparking</span>, <span class="text-cyan-300 font-semibold">DirectX GPU HAGS</span>, <span class="text-purple-300 font-semibold">0ms Gecikme Kalkanı</span> ve <span class="text-emerald-300 font-semibold">Jarvis AI</span> ile oyunlarda saf akıcılığa ulaşın.
         </p>
 
         <!-- CTA Action Buttons -->
@@ -138,9 +148,11 @@
             <span>ÜCRETSİZ İNDİR (v1.0.9)</span>
           </a>
 
-          <a href="#simulator" class="px-8 py-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/15 text-white font-bold text-base hover:border-cyan-400/40 hover:scale-105 transition-all flex items-center gap-3 backdrop-blur-md">
-            <i data-lucide="gauge" class="w-5 h-5 text-cyan-400"></i>
-            <span>FPS Artışını Hesapla</span>
+          <a href="https://discord.gg/opticore" target="_blank" class="px-8 py-4 rounded-2xl bg-[#5865F2]/20 hover:bg-[#5865F2]/30 border border-[#5865F2]/40 text-white font-bold text-base hover:scale-105 transition-all flex items-center gap-3 backdrop-blur-md shadow-lg shadow-[#5865F2]/15">
+            <svg class="w-5 h-5 fill-current text-[#5865F2]" viewBox="0 0 127.14 96.36">
+              <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,45.91,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,45.91,96.12,53,91.08,65.69,84.69,65.69Z"/>
+            </svg>
+            <span>discord.gg/opticore</span>
           </a>
         </div>
 
@@ -152,7 +164,7 @@
           </div>
           <div class="flex items-center gap-2">
             <i data-lucide="cpu" class="w-4 h-4 text-cyan-400"></i>
-            <span>Intel & AMD Uyumlu</span>
+            <span>Tüm Ekran Kartları & İşlemciler Uyumlu</span>
           </div>
           <div class="flex items-center gap-2">
             <i data-lucide="zap" class="w-4 h-4 text-purple-400"></i>
@@ -181,7 +193,7 @@
           </div>
 
           <!-- Mock Grid Stats -->
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div class="bg-black/50 p-4 rounded-2xl border border-white/5 space-y-1">
               <span class="text-[11px] text-slate-400 font-mono">CPU Core Unparking</span>
               <div class="text-xl font-bold text-cyan-300 font-mono">12/12 Aktif</div>
@@ -210,7 +222,7 @@
         </div>
       </div>
 
-      <!-- ⚡ INTERACTIVE FPS CALCULATOR / SIMULATOR -->
+      <!-- ⚡ INTERACTIVE FPS CALCULATOR (HER TÜRLÜ EKRAN KARTI VE OYUN) -->
       <section id="simulator" class="mt-32">
         <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
           <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/25 text-rose-300 text-xs font-bold font-mono">
@@ -218,34 +230,84 @@
             <span>CANLI İNTERAKTİF SİMÜLATÖR</span>
           </div>
           <h2 class="text-3xl sm:text-5xl font-black text-white">Ekran Kartın ve Oyunun İçin FPS Kazancını Gör</h2>
-          <p class="text-slate-400 text-sm sm:text-base">Donanımını ve oynamak istediğin oyunu seç, OptiCore ile elde edeceğin gerçek zamanlı FPS ve gecikme farkını anında hesapla.</p>
+          <p class="text-slate-400 text-sm sm:text-base">Genişletilmiş donanım kütüphanesinden ekran kartını ve oyununu seç, OptiCore ile elde edeceğin gerçek zamanlı FPS ve gecikme farkını anında hesapla.</p>
         </div>
 
         <div class="glass-card rounded-3xl border border-white/10 p-6 sm:p-10 max-w-4xl mx-auto shadow-2xl">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             
-            <!-- GPU Selector -->
+            <!-- Extensive GPU Selector -->
             <div>
-              <label class="block text-xs font-mono font-bold text-slate-400 mb-2">1. EKRAN KARTINI SEÇİN</label>
-              <select id="gpuSelect" onchange="calculateFps()" class="w-full px-4 py-3 rounded-2xl bg-black/60 border border-white/15 text-white font-bold text-sm focus:outline-none focus:border-cyan-400 transition-colors">
-                <option value="5070">NVIDIA GeForce RTX 5070 (Yeni Nesil)</option>
-                <option value="4060">NVIDIA GeForce RTX 4060 / 4060 Ti</option>
-                <option value="3060">NVIDIA GeForce RTX 3060 / 3070</option>
-                <option value="1660">NVIDIA GeForce GTX 1660 Super / Ti</option>
-                <option value="rx6700">AMD Radeon RX 6700 XT / 7600</option>
-                <option value="intel_iris">Intel Iris Xe / Entegre GPU</option>
+              <label class="block text-xs font-mono font-bold text-slate-400 mb-2">1. EKRAN KARTINI SEÇİN (TÜM MODELLER)</label>
+              <select id="gpuSelect" onchange="calculateFps()" class="w-full px-4 py-3 rounded-2xl bg-black/70 border border-white/15 text-white font-bold text-sm focus:outline-none focus:border-cyan-400 transition-colors">
+                <optgroup label="🔥 NVIDIA RTX 50 & 40 Serisi">
+                  <option value="5090">NVIDIA GeForce RTX 5090 (Amiral Gemisi)</option>
+                  <option value="5080">NVIDIA GeForce RTX 5080</option>
+                  <option value="5070" selected>NVIDIA GeForce RTX 5070 (Yeni Nesil)</option>
+                  <option value="4090">NVIDIA GeForce RTX 4090</option>
+                  <option value="4080">NVIDIA GeForce RTX 4080 / 4080 Super</option>
+                  <option value="4070">NVIDIA GeForce RTX 4070 / 4070 Super / Ti</option>
+                  <option value="4060ti">NVIDIA GeForce RTX 4060 Ti</option>
+                  <option value="4060">NVIDIA GeForce RTX 4060</option>
+                </optgroup>
+
+                <optgroup label="⚡ NVIDIA RTX 30 & 20 Serisi">
+                  <option value="3090">NVIDIA GeForce RTX 3090 / 3090 Ti</option>
+                  <option value="3080">NVIDIA GeForce RTX 3080 / 3080 Ti</option>
+                  <option value="3070">NVIDIA GeForce RTX 3070 / 3070 Ti</option>
+                  <option value="3060ti">NVIDIA GeForce RTX 3060 Ti</option>
+                  <option value="3060">NVIDIA GeForce RTX 3060 (12GB/8GB)</option>
+                  <option value="3050">NVIDIA GeForce RTX 3050</option>
+                  <option value="2080">NVIDIA GeForce RTX 2080 Super / Ti</option>
+                  <option value="2070">NVIDIA GeForce RTX 2070 / 2070 Super</option>
+                  <option value="2060">NVIDIA GeForce RTX 2060 / 2060 Super</option>
+                </optgroup>
+
+                <optgroup label="🎮 NVIDIA GTX Espor Serisi">
+                  <option value="1660s">NVIDIA GeForce GTX 1660 Super / Ti</option>
+                  <option value="1660">NVIDIA GeForce GTX 1660</option>
+                  <option value="1650s">NVIDIA GeForce GTX 1650 Super</option>
+                  <option value="1650">NVIDIA GeForce GTX 1650</option>
+                  <option value="1080">NVIDIA GeForce GTX 1080 / 1080 Ti</option>
+                  <option value="1070">NVIDIA GeForce GTX 1070 / 1070 Ti</option>
+                  <option value="1060">NVIDIA GeForce GTX 1060 (6GB/3GB)</option>
+                  <option value="1050ti">NVIDIA GeForce GTX 1050 Ti</option>
+                </optgroup>
+
+                <optgroup label="🔴 AMD Radeon Serisi">
+                  <option value="rx7900">AMD Radeon RX 7900 XTX / 7900 XT</option>
+                  <option value="rx7800">AMD Radeon RX 7800 XT / 7700 XT</option>
+                  <option value="rx7600">AMD Radeon RX 7600 / 7600 XT</option>
+                  <option value="rx6900">AMD Radeon RX 6900 XT / 6800 XT</option>
+                  <option value="rx6700">AMD Radeon RX 6700 XT / 6750 XT</option>
+                  <option value="rx6600">AMD Radeon RX 6600 / 6600 XT</option>
+                  <option value="rx5700">AMD Radeon RX 5700 XT / 5600 XT</option>
+                  <option value="rx580">AMD Radeon RX 580 / 570 (8GB/4GB)</option>
+                </optgroup>
+
+                <optgroup label="🔵 Intel Arc & Entegre Grafikler">
+                  <option value="arc770">Intel Arc A770 (16GB)</option>
+                  <option value="arc750">Intel Arc A750 / A580</option>
+                  <option value="intel_iris">Intel Iris Xe Graphics (Laptop)</option>
+                  <option value="intel_uhd">Intel UHD Graphics 770 / 730 / 630</option>
+                </optgroup>
               </select>
             </div>
 
-            <!-- Game Selector -->
+            <!-- Expanded Game Selector -->
             <div>
               <label class="block text-xs font-mono font-bold text-slate-400 mb-2">2. HEDEF OYUNU SEÇİN</label>
-              <select id="gameSelect" onchange="calculateFps()" class="w-full px-4 py-3 rounded-2xl bg-black/60 border border-white/15 text-white font-bold text-sm focus:outline-none focus:border-cyan-400 transition-colors">
+              <select id="gameSelect" onchange="calculateFps()" class="w-full px-4 py-3 rounded-2xl bg-black/70 border border-white/15 text-white font-bold text-sm focus:outline-none focus:border-cyan-400 transition-colors">
                 <option value="cs2">Counter-Strike 2 (CS2)</option>
                 <option value="val">VALORANT</option>
-                <option value="fivem">FiveM / GTA V (Roleplay)</option>
-                <option value="fortnite">Fortnite (Performans Alpha)</option>
+                <option value="fivem">FiveM / GTA V (Roleplay & Doku Bug Önleme)</option>
+                <option value="fortnite">Fortnite (Performans Alpha Modu)</option>
                 <option value="warzone">Call of Duty: Warzone</option>
+                <option value="apex">Apex Legends</option>
+                <option value="rust">Rust</option>
+                <option value="r6">Tom Clancy's Rainbow Six Siege</option>
+                <option value="lol">League of Legends (LoL)</option>
+                <option value="cyberpunk">Cyberpunk 2077</option>
               </select>
             </div>
 
@@ -257,8 +319,8 @@
             <!-- Before Card -->
             <div class="p-6 rounded-2xl bg-black/40 border border-white/5 text-center space-y-2">
               <span class="text-xs font-mono font-bold text-slate-400">VARSAYILAN WINDOWS</span>
-              <div id="beforeFps" class="text-4xl font-black text-slate-300 font-mono">160 FPS</div>
-              <p class="text-xs text-rose-400 font-mono">Çatışmada %1 Low Drop: ~85 FPS</p>
+              <div id="beforeFps" class="text-4xl font-black text-slate-300 font-mono">240 FPS</div>
+              <p id="dropText" class="text-xs text-rose-400 font-mono">Çatışmada %1 Low Drop: ~140 FPS</p>
               <div class="text-[11px] text-slate-500">Park edilmiş çekirdekler & DWM gecikmesi</div>
             </div>
 
@@ -268,8 +330,8 @@
                 OPTICORE v1.0.9
               </div>
               <span class="text-xs font-mono font-bold text-cyan-300">5'Lİ ESPORT MOTORU İLE</span>
-              <div id="afterFps" class="text-4xl font-black text-cyan-400 font-mono">215 FPS</div>
-              <p id="gainText" class="text-xs text-emerald-400 font-mono font-bold">+55 FPS Artış • 0ms Giriş Gecikmesi</p>
+              <div id="afterFps" class="text-4xl font-black text-cyan-400 font-mono">310 FPS</div>
+              <p id="gainText" class="text-xs text-emerald-400 font-mono font-bold">+70 FPS Artış • 0ms Giriş Gecikmesi</p>
               <div class="text-[11px] text-slate-400">Sabit 144/240Hz akıcılık & Sıfır Takılma</div>
             </div>
 
@@ -278,25 +340,25 @@
         </div>
       </section>
 
-      <!-- 🤖 INTERACTIVE JARVIS AI WEB DEMO -->
+      <!-- 🤖 INTERACTIVE JARVIS AI WEB DEMO (HER ŞEYİ CEVAPLAYAN SÜPER ZEKA) -->
       <section id="jarvis" class="mt-32">
         <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
           <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs font-bold font-mono">
             <i data-lucide="bot" class="w-3.5 h-3.5"></i>
-            <span>JARVIS AI OMNI-BRAIN</span>
+            <span>JARVIS AI OMNI-BRAIN (CANLI WEB SÜRÜMÜ)</span>
           </div>
           <h2 class="text-3xl sm:text-5xl font-black text-white">Tarayıcında Canlı Jarvis AI ile Tanış</h2>
-          <p class="text-slate-400 text-sm sm:text-base">Espor rehberliği, kodlama, sistem analizi ve genel bilgi asistanı. Doğrudan aşağıdan soru sor ve test et!</p>
+          <p class="text-slate-400 text-sm sm:text-base">Espor rehberliği, kodlama, sistem analizi, matematik ve genel bilgi asistanı. Doğrudan aşağıdan soru sor ve test et!</p>
         </div>
 
         <div class="glass-card rounded-3xl border border-purple-500/30 p-6 max-w-3xl mx-auto shadow-2xl shadow-purple-500/10">
           
           <!-- Chat Window -->
-          <div id="webChatBox" class="h-64 overflow-y-auto space-y-3 p-4 rounded-2xl bg-black/60 border border-white/5 text-xs font-sans custom-scrollbar mb-4">
+          <div id="webChatBox" class="h-72 overflow-y-auto space-y-3 p-4 rounded-2xl bg-black/60 border border-white/5 text-xs font-sans custom-scrollbar mb-4">
             <div class="flex items-start gap-2">
               <div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-cyan-400 to-purple-600 flex items-center justify-center text-black font-bold shrink-0">🤖</div>
-              <div class="p-3 rounded-2xl rounded-tl-none bg-[#14192b] border border-cyan-500/20 text-slate-200 leading-relaxed">
-                Merhaba efendim! Ben Jarvis AI. OptiCore Studio PRO'nun yapay zeka beyniyim. Bana CS2 ayarlarını, Python kodlarını, matematik denklemlerini veya donanım tavsiyelerini sorabilirsiniz!
+              <div class="p-3.5 rounded-2xl rounded-tl-none bg-[#14192b] border border-cyan-500/20 text-slate-200 leading-relaxed max-w-[90%]">
+                Merhaba efendim! Ben <strong>Jarvis AI</strong>. OptiCore Studio PRO'nun yapay zeka beyniyim. Bana CS2/Valorant espor ayarlarını, Python algoritmalarını, matematik hesaplamalarını veya aklınıza gelen herhangi bir şeyi sorabilirsiniz!
               </div>
             </div>
           </div>
@@ -304,8 +366,10 @@
           <!-- Quick Chips -->
           <div class="flex items-center gap-2 overflow-x-auto pb-3 text-[11px] font-mono">
             <span class="text-slate-500 shrink-0">Hızlı Sor:</span>
+            <button onclick="askJarvisWeb('sa')" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-purple-500/20 border border-white/10 text-slate-300 hover:text-purple-300 shrink-0 transition-all font-semibold">👋 sa</button>
             <button onclick="askJarvisWeb('CS2 için en iyi espor ayarı ne?')" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-cyan-500/20 border border-white/10 text-slate-300 hover:text-cyan-300 shrink-0 transition-all font-semibold">🎯 CS2 Ayarı</button>
-            <button onclick="askJarvisWeb('Python ile asal sayı kodu yaz')" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-cyan-500/20 border border-white/10 text-slate-300 hover:text-cyan-300 shrink-0 transition-all font-semibold">💻 Python Asal Sayı</button>
+            <button onclick="askJarvisWeb('Valorant için en iyi ayarlar neler?')" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-cyan-500/20 border border-white/10 text-slate-300 hover:text-cyan-300 shrink-0 transition-all font-semibold">🎯 Valorant</button>
+            <button onclick="askJarvisWeb('Python ile asal sayı kodu yaz')" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-cyan-500/20 border border-white/10 text-slate-300 hover:text-cyan-300 shrink-0 transition-all font-semibold">💻 Python Kod</button>
             <button onclick="askJarvisWeb('125 * 8 kaç eder?')" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-cyan-500/20 border border-white/10 text-slate-300 hover:text-cyan-300 shrink-0 transition-all font-semibold">🧮 125 * 8</button>
             <button onclick="askJarvisWeb('OptiCore nedir ve ne işe yarar?')" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-cyan-500/20 border border-white/10 text-slate-300 hover:text-cyan-300 shrink-0 transition-all font-semibold">⚡ OptiCore Nedir?</button>
           </div>
@@ -313,8 +377,9 @@
           <!-- Chat Input -->
           <div class="flex items-center gap-2">
             <input id="webJarvisInput" type="text" placeholder="Jarvis'e aklınıza gelen herhangi bir şeyi sorun..." onkeydown="if(event.key==='Enter') sendWebJarvis()" class="flex-1 px-4 py-3 rounded-xl bg-black/70 border border-white/10 text-white text-xs placeholder-slate-500 focus:outline-none focus:border-purple-400 transition-colors">
-            <button onclick="sendWebJarvis()" class="px-5 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-400 hover:to-indigo-500 text-white font-bold text-xs shadow-lg shadow-purple-500/25 active:scale-95 transition-all">
-              Gönder
+            <button onclick="sendWebJarvis()" class="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-500 via-indigo-600 to-cyan-500 hover:from-purple-400 hover:to-cyan-400 text-white font-bold text-xs shadow-lg shadow-purple-500/25 active:scale-95 transition-all flex items-center gap-1.5">
+              <span>Gönder</span>
+              <i data-lucide="send" class="w-3.5 h-3.5"></i>
             </button>
           </div>
 
@@ -382,8 +447,11 @@
               </ul>
             </div>
 
-            <a href="https://discord.gg/vS35K27K" target="_blank" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-400 via-orange-500 to-amber-600 hover:from-amber-300 hover:to-orange-400 text-black font-black text-xs text-center shadow-lg shadow-amber-500/25 transition-all">
-              Discord'dan VIP Lisans Al
+            <a href="https://discord.gg/opticore" target="_blank" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-400 via-orange-500 to-amber-600 hover:from-amber-300 hover:to-orange-400 text-black font-black text-xs text-center shadow-lg shadow-amber-500/25 transition-all flex items-center justify-center gap-2">
+              <svg class="w-4 h-4 fill-current text-black" viewBox="0 0 127.14 96.36">
+                <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,45.91,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,45.91,96.12,53,91.08,65.69,84.69,65.69Z"/>
+              </svg>
+              <span>discord.gg/opticore'dan VIP Al</span>
             </a>
           </div>
 
@@ -424,11 +492,13 @@
             OptiCore Studio PRO, espor oyuncularının sistemlerinden maksimum verim alabilmesi için 6Closy tarafından geliştirilmiştir.
           </p>
           <div class="flex items-center justify-center gap-4 pt-2">
-            <a href="https://discord.gg/vS35K27K" target="_blank" class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 text-xs font-bold transition-all flex items-center gap-2">
-              <i data-lucide="message-circle" class="w-4 h-4 text-[#5865F2]"></i>
-              <span>Discord</span>
+            <a href="https://discord.gg/opticore" target="_blank" class="px-5 py-2.5 rounded-xl bg-[#5865F2]/20 hover:bg-[#5865F2]/30 border border-[#5865F2]/40 text-white text-xs font-bold transition-all flex items-center gap-2 shadow-lg shadow-[#5865F2]/10">
+              <svg class="w-4 h-4 fill-current text-[#5865F2]" viewBox="0 0 127.14 96.36">
+                <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,45.91,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,45.91,96.12,53,91.08,65.69,84.69,65.69Z"/>
+              </svg>
+              <span>discord.gg/opticore</span>
             </a>
-            <a href="https://github.com/Liqer01/OptiCore-" target="_blank" class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 text-xs font-bold transition-all flex items-center gap-2">
+            <a href="https://github.com/Liqer01/OptiCore-" target="_blank" class="px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 text-xs font-bold transition-all flex items-center gap-2">
               <i data-lucide="github" class="w-4 h-4"></i>
               <span>GitHub</span>
             </a>
@@ -447,7 +517,8 @@
       </div>
       <div class="flex items-center gap-6">
         <a href="#simulator" class="hover:text-white transition-colors">Simülatör</a>
-        <a href="https://discord.gg/vS35K27K" target="_blank" class="hover:text-white transition-colors">Discord</a>
+        <a href="#jarvis" class="hover:text-white transition-colors">Jarvis AI</a>
+        <a href="https://discord.gg/opticore" target="_blank" class="hover:text-white transition-colors">Discord: discord.gg/opticore</a>
         <a href="https://github.com/Liqer01/OptiCore-" target="_blank" class="hover:text-white transition-colors">GitHub</a>
       </div>
     </div>
@@ -457,63 +528,50 @@
   <script>
     lucide.createIcons();
 
-    // 1. Interactive FPS Calculator Logic
-    const fpsData = {
-      '5070': {
-        'cs2': { before: 240, after: 310, gain: '+70 FPS' },
-        'val': { before: 380, after: 480, gain: '+100 FPS' },
-        'fivem': { before: 110, after: 155, gain: '+45 FPS' },
-        'fortnite': { before: 220, after: 290, gain: '+70 FPS' },
-        'warzone': { before: 130, after: 175, gain: '+45 FPS' }
-      },
-      '4060': {
-        'cs2': { before: 180, after: 235, gain: '+55 FPS' },
-        'val': { before: 260, after: 330, gain: '+70 FPS' },
-        'fivem': { before: 85, after: 120, gain: '+35 FPS' },
-        'fortnite': { before: 160, after: 215, gain: '+55 FPS' },
-        'warzone': { before: 95, after: 130, gain: '+35 FPS' }
-      },
-      '3060': {
-        'cs2': { before: 150, after: 195, gain: '+45 FPS' },
-        'val': { before: 220, after: 280, gain: '+60 FPS' },
-        'fivem': { before: 70, after: 100, gain: '+30 FPS' },
-        'fortnite': { before: 130, after: 175, gain: '+45 FPS' },
-        'warzone': { before: 80, after: 110, gain: '+30 FPS' }
-      },
-      '1660': {
-        'cs2': { before: 110, after: 150, gain: '+40 FPS' },
-        'val': { before: 160, after: 210, gain: '+50 FPS' },
-        'fivem': { before: 50, after: 75, gain: '+25 FPS' },
-        'fortnite': { before: 95, after: 135, gain: '+40 FPS' },
-        'warzone': { before: 55, after: 80, gain: '+25 FPS' }
-      },
-      'rx6700': {
-        'cs2': { before: 190, after: 245, gain: '+55 FPS' },
-        'val': { before: 270, after: 340, gain: '+70 FPS' },
-        'fivem': { before: 90, after: 125, gain: '+35 FPS' },
-        'fortnite': { before: 170, after: 225, gain: '+55 FPS' },
-        'warzone': { before: 100, after: 135, gain: '+35 FPS' }
-      },
-      'intel_iris': {
-        'cs2': { before: 45, after: 70, gain: '+25 FPS' },
-        'val': { before: 75, after: 110, gain: '+35 FPS' },
-        'fivem': { before: 25, after: 42, gain: '+17 FPS' },
-        'fortnite': { before: 40, after: 65, gain: '+25 FPS' },
-        'warzone': { before: 20, after: 35, gain: '+15 FPS' }
-      }
+    // 1. Interactive FPS Calculator Logic (Expanded with all GPUs)
+    const baseGpuMultipliers = {
+      '5090': 2.2, '5080': 1.9, '5070': 1.6, '4090': 1.85, '4080': 1.65,
+      '4070': 1.45, '4060ti': 1.25, '4060': 1.15, '3090': 1.5, '3080': 1.35,
+      '3070': 1.2, '3060ti': 1.1, '3060': 1.0, '3050': 0.85, '2080': 1.15,
+      '2070': 1.0, '2060': 0.85, '1660s': 0.75, '1660': 0.7, '1650s': 0.65,
+      '1650': 0.55, '1080': 0.95, '1070': 0.85, '1060': 0.65, '1050ti': 0.45,
+      'rx7900': 1.8, 'rx7800': 1.5, 'rx7600': 1.2, 'rx6900': 1.45,
+      'rx6700': 1.25, 'rx6600': 1.0, 'rx5700': 0.9, 'rx580': 0.6,
+      'arc770': 1.1, 'arc750': 0.95, 'intel_iris': 0.4, 'intel_uhd': 0.25
+    };
+
+    const baseGameFps = {
+      'cs2': { base: 180, gainPct: 0.32, dropPct: 0.55 },
+      'val': { base: 260, gainPct: 0.35, dropPct: 0.60 },
+      'fivem': { base: 85, gainPct: 0.40, dropPct: 0.45 },
+      'fortnite': { base: 160, gainPct: 0.35, dropPct: 0.50 },
+      'warzone': { base: 95, gainPct: 0.35, dropPct: 0.50 },
+      'apex': { base: 140, gainPct: 0.30, dropPct: 0.55 },
+      'rust': { base: 75, gainPct: 0.38, dropPct: 0.45 },
+      'r6': { base: 200, gainPct: 0.28, dropPct: 0.60 },
+      'lol': { base: 240, gainPct: 0.30, dropPct: 0.70 },
+      'cyberpunk': { base: 65, gainPct: 0.35, dropPct: 0.50 }
     };
 
     function calculateFps() {
       const gpu = document.getElementById('gpuSelect').value;
       const game = document.getElementById('gameSelect').value;
-      const match = fpsData[gpu] && fpsData[gpu][game] ? fpsData[gpu][game] : { before: 150, after: 200, gain: '+50 FPS' };
 
-      document.getElementById('beforeFps').textContent = match.before + ' FPS';
-      document.getElementById('afterFps').textContent = match.after + ' FPS';
-      document.getElementById('gainText').textContent = match.gain + ' Artış • 0ms Giriş Gecikmesi';
+      const mult = baseGpuMultipliers[gpu] || 1.0;
+      const gConfig = baseGameFps[game] || { base: 120, gainPct: 0.3, dropPct: 0.5 };
+
+      const before = Math.round(gConfig.base * mult);
+      const gain = Math.round(before * gConfig.gainPct);
+      const after = before + gain;
+      const drop = Math.round(before * gConfig.dropPct);
+
+      document.getElementById('beforeFps').textContent = before + ' FPS';
+      document.getElementById('dropText').textContent = 'Çatışmada %1 Low Drop: ~' + drop + ' FPS';
+      document.getElementById('afterFps').textContent = after + ' FPS';
+      document.getElementById('gainText').textContent = '+' + gain + ' FPS Artış • 0ms Giriş Gecikmesi';
     }
 
-    // 2. Web Jarvis AI Demo Logic
+    // 2. Web Jarvis AI Omni-Brain Engine (Her Şeyi Bilen Canlı Asistan)
     function askJarvisWeb(q) {
       document.getElementById('webJarvisInput').value = q;
       sendWebJarvis();
@@ -526,10 +584,10 @@
 
       const chatBox = document.getElementById('webChatBox');
       
-      // User message
+      // User message bubble
       const userDiv = document.createElement('div');
       userDiv.className = 'flex items-start justify-end gap-2';
-      userDiv.innerHTML = '<div class="p-3 rounded-2xl rounded-tr-none bg-gradient-to-r from-cyan-600 to-blue-600 text-white max-w-[85%]">' + escapeHtml(text) + '</div>';
+      userDiv.innerHTML = '<div class="p-3 rounded-2xl rounded-tr-none bg-gradient-to-r from-purple-600 to-indigo-600 text-white max-w-[85%] font-medium">' + escapeHtml(text) + '</div>';
       chatBox.appendChild(userDiv);
       input.value = '';
       chatBox.scrollTop = chatBox.scrollHeight;
@@ -538,24 +596,78 @@
       const thinkDiv = document.createElement('div');
       thinkDiv.className = 'flex items-start gap-2';
       thinkDiv.id = 'webThinking';
-      thinkDiv.innerHTML = '<div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-cyan-400 to-purple-600 flex items-center justify-center text-black font-bold shrink-0">🤖</div><div class="p-3 rounded-2xl rounded-tl-none bg-[#14192b] border border-cyan-500/20 text-cyan-300 animate-pulse">Jarvis düşünüyor...</div>';
+      thinkDiv.innerHTML = '<div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-cyan-400 to-purple-600 flex items-center justify-center text-black font-bold shrink-0">🤖</div><div class="p-3 rounded-2xl rounded-tl-none bg-[#14192b] border border-cyan-500/20 text-cyan-300 animate-pulse font-mono">⚡ Jarvis düşünüyor...</div>';
       chatBox.appendChild(thinkDiv);
       chatBox.scrollTop = chatBox.scrollHeight;
 
-      // Response logic
-      let reply = '';
       const lower = text.toLowerCase();
+      let reply = '';
 
-      if (lower.includes('cs2') || lower.includes('counter')) {
-        reply = '🎯 **CS2 Esporcu Tavsiyesi:** 1280x960 4:3 stretched, Nvidia Reflex Açık+Takviye, OptiCore 5\\'li FPS Motoru ile CPU Core Unparking devrede olmalıdır. Mermi gecikmesi 0ms\\'ye iner!';
-      } else if (lower.includes('asal') || lower.includes('prime')) {
-        reply = '💻 **Python Asal Sayı Bulucu:**\\n```python\\ndef is_prime(n):\\n    return n > 1 and all(n % i != 0 for i in range(2, int(n**0.5) + 1))\\nprint([x for x in range(1, 100) if is_prime(x)])\\n```';
-      } else if (lower.includes('125 * 8') || (lower.includes('125') && lower.includes('8'))) {
-        reply = '🧮 **Hesaplama Sonucu:** 125 * 8 = 1000. İşlem başarıyla tamamlandı efendim!';
+      // 1. Selamlaşma
+      if (lower === 'sa' || lower === 's.a' || lower === 's.a.' || lower.startsWith('sa ') || lower.endsWith(' sa') || lower.includes('selamün aleyküm') || lower.includes('selamun aleykum')) {
+        reply = 'Aleyküm selam efendim! Hoş geldiniz. OptiCore Studio PRO web portalındasınız. Size ve sisteminize bugün nasıl yardımcı olabilirim? 👑';
+      } else if (lower === 'as' || lower === 'a.s' || lower.includes('aleyküm selam')) {
+        reply = 'Merhaba efendim! Size ve donanımınıza en yüksek espor performansını sunmak için buradayım.';
+      } else if (lower.includes('selam') || lower.includes('merhaba') || lower.includes('naber') || lower.includes('nasılsın') || lower.includes('hey')) {
+        reply = 'Merhaba efendim! Donanım kilitleriniz açık, sisteminiz espor modunda çalışıyor. Size nasıl yardımcı olabilirim?';
+      } else if (lower.includes('kimsin') || lower.includes('nesin') || lower.includes('adın')) {
+        reply = '🤖 Ben Jarvis! 6Closy tarafından OptiCore Studio PRO için geliştirilmiş yapay zeka espor, sistem optimizasyon ve kodlama asistanıyım.';
+      } else if (lower.includes('closy') || lower.includes('kurucu') || lower.includes('yapımcı')) {
+        reply = '👑 OptiCore Studio PRO\'nun kurucusu ve baş mimarı 6Closy\'dir. Kendisi espor optimizasyon sistemini dünya standartlarında geliştirmektedir.';
+      }
+
+      // 2. Matematik Motoru
+      else if (/[0-9]/.test(text) && (lower.includes('+') || lower.includes('-') || lower.includes('*') || lower.includes('/') || lower.includes('hesapla') || lower.includes('kaç eder') || lower.includes('kaç'))) {
+        try {
+          const sanitized = text.replace(/[^0-9\+\-\*/\.\(\)\s]/g, '').trim();
+          if (sanitized && /[0-9]/.test(sanitized)) {
+            const calc = Function('"use strict"; return (' + sanitized + ')')();
+            if (!isNaN(calc) && isFinite(calc)) {
+              reply = '🧮 Hesaplama Sonucu:\n' + sanitized + ' = ' + calc + '\nİşlem başarıyla tamamlandı efendim.';
+            }
+          }
+        } catch(e) {}
+      }
+
+      // 3. Kodlama & Algoritmalar
+      else if (lower.includes('kod') || lower.includes('python') || lower.includes('javascript') || lower.includes('react') || lower.includes('c++') || lower.includes('asal') || lower.includes('fibonacci')) {
+        if (lower.includes('fibonacci')) {
+          reply = 'Python ile Optimize Edilmiş Fibonacci:\n\ndef fibonacci(n):\n    a, b = 0, 1\n    res = []\n    for _ in range(n):\n        res.append(a)\n        a, b = b, a + b\n    return res\n\nprint(fibonacci(10)) # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]';
+        } else if (lower.includes('asal') || lower.includes('prime')) {
+          reply = 'Python ile Hızlı Asal Sayı Bulucu:\n\ndef is_prime(n):\n    return n > 1 and all(n % i != 0 for i in range(2, int(n**0.5) + 1))\n\nprimes = [x for x in range(1, 100) if is_prime(x)]\nprint("1-100 Asal Sayılar:", primes)';
+        } else {
+          reply = '💻 İstediğiniz dilde (Python, JavaScript, React, C++, C#, SQL) her türlü algoritmayı yazabilirim efendim!';
+        }
+      }
+
+      // 4. Espor & Oyun Ayarları
+      else if (lower.includes('cs2') || lower.includes('counter')) {
+        reply = '🎯 Counter-Strike 2 Espor Rehberi:\n• Çözünürlük: 1280x960 4:3 Stretched\n• Nvidia Reflex: Açık + Takviye (Boost)\n• Doku Kalitesi: Düşük / Orta\n• OptiCore 5\'li FPS motoru ile CPU Core Unparking devrede olmalıdır!';
+      } else if (lower.includes('valorant')) {
+        reply = '🎯 Valorant Espor Rehberi:\n• Raw Input Buffer: Açık (Mouse verisi doğrudan oyun motoruna işlenir)\n• Görüntü Modu: Tam Ekran\n• Nvidia Reflex: Açık + Takviye\n• OptiCore RAM Temizleyicisi: Arka plan süreçlerini temiz tutun efendim.';
+      } else if (lower.includes('fivem') || lower.includes('gta')) {
+        reply = '🚗 FiveM & GTA V Doku Kaybı Önleme:\n• Extended Texture Budget ayarını 3-4 tık artırın.\n• DirectX Shader Cache temizliği yapın.\n• OptiCore RAM Nöbetçisini açık tutun efendim.';
       } else if (lower.includes('opti') || lower.includes('nedir')) {
-        reply = '⚡ **OptiCore Studio:** 6Closy tarafından geliştirilen, Windows 11/10 çekirdek kilitlerini açan, DirectX HAGS ve Core Unparking ile oyunlarda +20-50 FPS kazandıran yeni nesil espor optimizasyon kokpitidir.';
-      } else {
-        reply = '"' + text + '" hakkında araştırmamı yaptım efendim. OptiCore Studio v1.0.9 uygulamasını bilgisayarınıza indirerek tam sürüm Jarvis AI Omni-Brain\\'i sınırsız kullanabilirsiniz!';
+        reply = '⚡ OptiCore Studio PRO; 6Closy tarafından geliştirilen, Windows 11/10 çekirdek kilitlerini açan, DirectX HAGS ve Core Unparking ile oyunlarda +20-50 FPS kazandıran yeni nesil espor kokpitidir.';
+      }
+
+      // 5. Canlı Bilgi / Wikipedia Araması
+      if (!reply) {
+        try {
+          const cleanQ = text.replace(/nedir/gi, '').replace(/kimdir/gi, '').replace(/hakkında/gi, '').replace(/\?/g, '').trim();
+          const wRes = await fetch('https://tr.wikipedia.org/api/rest_v1/page/summary/' + encodeURIComponent(cleanQ || text));
+          if (wRes.ok) {
+            const wData = await wRes.json();
+            if (wData.extract) {
+              const sentences = wData.extract.split('. ');
+              reply = '📚 **' + wData.title + '**:\n' + sentences.slice(0, 3).join('. ') + '.';
+            }
+          }
+        } catch(e) {}
+      }
+
+      if (!reply) {
+        reply = '"' + text + '" hakkında araştırmamı yaptım efendim. OptiCore Studio v1.0.9 uygulamasını bilgisayarınıza indirerek tam sürüm Jarvis AI Omni-Brain\'i sınırsız kullanabilirsiniz!';
       }
 
       setTimeout(() => {
@@ -564,10 +676,10 @@
 
         const botDiv = document.createElement('div');
         botDiv.className = 'flex items-start gap-2';
-        botDiv.innerHTML = '<div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-cyan-400 to-purple-600 flex items-center justify-center text-black font-bold shrink-0">🤖</div><div class="p-3 rounded-2xl rounded-tl-none bg-[#14192b] border border-cyan-500/20 text-slate-200 leading-relaxed max-w-[85%] whitespace-pre-wrap">' + escapeHtml(reply) + '</div>';
+        botDiv.innerHTML = '<div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-cyan-400 to-purple-600 flex items-center justify-center text-black font-bold shrink-0">🤖</div><div class="p-3.5 rounded-2xl rounded-tl-none bg-[#14192b] border border-cyan-500/20 text-slate-200 leading-relaxed max-w-[90%] whitespace-pre-wrap font-sans text-xs">' + escapeHtml(reply) + '</div>';
         chatBox.appendChild(botDiv);
         chatBox.scrollTop = chatBox.scrollHeight;
-      }, 600);
+      }, 500);
     }
 
     function escapeHtml(str) {
